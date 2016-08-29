@@ -1,0 +1,254 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }  
+body, button, input, select, textarea { color:#454545; }  
+body{font:18px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei","Josefin Slab","Myriad Pro",sans-serif;}
+button, input, select, textarea, h1, h2, h3, h4, h5, h6 { font-size:100%; }  
+h2, h3 { font-size:20px; }  
+button, input, select, textarea, label { vertical-align:middle; outline:none; }  
+img { vertical-align:middle; border:none; display:inline-block;}  
+ul{list-style: none;
+	list-style-position:inside;
+	list-style-type:georgian;color:#999;}
+a { text-decoration:none; color:#999; vertical-align:baseline; cursor:pointer; }  
+
+table { border-collapse:collapse; border-spacing:9;}  
+
+@font-face {
+  font-family: "GeneralFoundicons";
+  src: url("../fonts/general_foundicons.eot");
+  src: url("../fonts/general_foundicons.eot?#iefix") format("embedded-opentype"), 
+  	   url("../fonts/general_foundicons.woff") format("woff"),
+  	   url("../fonts/general_foundicons.ttf") format("truetype"), 
+  	   url("../fonts/general_foundicons.svg#GeneralFoundicons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/*公共style*/
+body { 
+	font-family: Georgia,serif;
+	background: #ddd;
+	font-weight: 500;
+	font-size: 16px;
+	color: #333;
+	overflow: hidden;
+	font-smoothing:antialiased;
+}
+a{
+	text-decoration: none;
+	color: #555;
+}
+.clr{
+		width: 0;
+		height: 0;
+		overflow: hidden;
+		clear: both;
+		padding:0;
+		margin:0;
+}
+.st-con{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left:0;
+	top:0;
+	font-family:"Josefin Slab",
+	"Myriad Pro",Arial,sans-serif;}
+
+
+
+
+/*input 的style*/
+.st-con > input,
+.st-con > a{
+				width: 20%;
+				height: 55px;
+				line-height: 55px;
+				position: fixed;
+				bottom: 0;
+				border-radius: 100px/10px;}
+
+.st-con > input{opacity: 0;z-index: 1000;}
+
+
+
+
+/*a 的style*/			
+.st-con > a{
+			z-index: 10;
+			font-size: 25px;
+			font-weight: 700;
+			background: #e23a6e;
+			color: #fff;
+			text-align: center;
+			text-shadow: 1px 1px 1px rgba(151,24,64,0.2)
+			cursor:pointer;}
+
+#st-con1,#st-con1 + a{left:0;}
+#st-con2,#st-con2 + a{left:20%;}
+#st-con3,#st-con3 + a{left:40%;}
+#st-con4,#st-con4 + a{left:60%;}
+#st-con5,#st-con5 + a{left:80%;}
+
+.st-con input:checked + a,
+.st-con input:checked:hover + a{background: #821134;}
+
+.st-con  input:checked + a:after{
+							content: "";
+							width: 0;
+							height: 0;
+							overflow: hidden;
+							border:30px solid transparent;
+							border-bottom-color: #821134;
+							position: absolute;
+							bottom:100%;
+							left:50%;
+							margin-left: -30px;}
+
+.st-con input:hover + a{background: #ad244f;}
+
+
+
+/* section to style*/
+.st-scroll,.st-panel{
+	width: 100%;
+	height: 100%;
+	position:relative;
+}
+.st-scroll{
+	left:0;
+	top:0;
+	transform:translate3d(0,0,0);
+	backface-visibility:hidden;
+	transition:all 0.5s ease-in-out;
+}
+.st-panel{
+	background: #fff;
+	overflow: hidden;
+}
+
+
+
+/*转换后的字体图标颜色*/
+.st-color{background: #fa96b5;}
+.st-color .st-desc{background:#fff;}
+.st-color [data-icon]:after{color: #fa96b5;}
+.st-panel + .st-color h2{color: #fff;text-shadow:2px 2px 2px rgba(0,0,0,0.1);}
+.st-panel + .st-color p{color:rgba(255,255,255,0.8);}
+
+
+/*频幕转换*/
+#st-con1:checked ~ .st-scroll{transform:translateY(0%);}
+#st-con2:checked ~ .st-scroll{transform:translateY(-100%);}
+#st-con3:checked ~ .st-scroll{transform:translateY(-200%);}
+#st-con4:checked ~ .st-scroll{transform:translateY(-300%);}
+#st-con5:checked ~ .st-scroll{transform:translateY(-400%);}
+
+
+/*top三角*/
+.st-desc{
+	width: 200px;
+	height: 200px;
+	background: #fa96b5;
+	position: absolute;
+	left:50%;
+	top:0;
+	margin-left: -100px;
+	transform:translateY(-50%) rotate(45deg);
+}
+/*top三角内的元素icon*/
+[data-icon]:after{
+	content: attr(data-icon);
+	width: 200px;
+	height: 200px;
+	color: #fff;
+	font-size: 70px;
+	text-align: center;
+	line-height: 200px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin:-100px 0 0 -100px;
+	transform:rotate(-45deg) translateY(25%);
+	font-family: "GeneralFoundicons";
+}
+
+/*h2 的style  and  animation*/
+.st-panel h2{
+	color: #e23a6e;
+	font-size: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-weight: 900;
+	width: 80%;
+	position: absolute;
+	left:10%;
+	top:35%;
+	text-shadow: 1px 1px 1px rgba(151,24,64,0.2);
+	backface-visibility:hidden;}
+	
+#st-con1:checked ~ .st-scroll #st-panel-1 h2,
+#st-con2:checked ~ .st-scroll #st-panel-2 h2,
+#st-con3:checked ~ .st-scroll #st-panel-3 h2,
+#st-con4:checked ~ .st-scroll #st-panel-4 h2,
+#st-con5:checked ~ .st-scroll #st-panel-5 h2{animation:one 0.9s ease-in-out 0.1s backwards;}
+@keyframes one{
+		0%{transform:translateY(-30px);opacity: 0;}
+		100%{transform:translateY(0);opacity: 1;}}
+
+
+/*p 的style  and  animation*/
+.st-panel ul{
+			position: absolute;
+			width: 50%;
+			left:25%;
+			top:45%;
+			font-size: 20px;
+			line-height: 22px;
+			text-align: center;
+			backface-visibility:hidden;
+			color: #8b8b8b;
+			list-style: none;}
+
+.st-panel ul li{padding-top: 3px;}
+#st-con1:checked ~ .st-scroll #st-panel-1 ul,
+#st-con2:checked ~ .st-scroll #st-panel-2 ul,
+#st-con3:checked ~ .st-scroll #st-panel-3 ul,
+#st-con4:checked ~ .st-scroll #st-panel-4 ul,
+#st-con5:checked ~ .st-scroll #st-panel-5 ul{animation:two 0.9s ease-in-out 0.3s backwards;}
+@keyframes two{
+		0%{transform:translateY(30px);opacity: 0;}
+		100%{transform:translateY(0);opacity: 1;}}
+
+
+/*响应式*/
+/*当最大宽度为1000px时执行下列条件*/
+@media screen and (max-width: 1000px){
+							.st-panel h2{font-size: 45px;}
+
+							.st-panel ul{left:5%;width: 90%;margin-top: 0;}
+
+							.st-con > a{font-size: 18px;}
+						}
+/*当最大宽度为450px时执行下列条件*/
+@media screen and (max-width: 450px){
+							.st-panel h2{font-size: 30px;}
+
+							.st-panel ul{left:5%;width: 90%;margin-top: 0;}
+
+							.st-con > a{font-size: 10px;}
+
+							.st-desc{
+								width: 150px;
+								height: 150px;
+								position: absolute;
+								left:56%;
+								top:0;}
+
+							[data-icon]:after{font-size: 60px;transform:translate(0% 0%) rotate(45deg);}
+						}
+
+
+
+
+

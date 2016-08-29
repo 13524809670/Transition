@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transition</title>
+	<style type="text/css">
+		.box{
+			width: 200px;
+			height: 200px;
+			background: aqua;
+			transition:width 3s;
+			margin:100px auto;}
+		.box:hover{
+				width:1500px;
+				color: #111;
+				background: yellow; }
+
+
+
+		.one{
+			width: 200px;
+			height: 200px;
+			background: #3cf;
+			margin:50px auto;
+			transition:height 3s linear 1s;
+			text-align: center; }
+		.one:hover{ height:500px; }
+
+
+
+		.two{
+			width: 200px;
+			height: 200px;
+			background: aqua;
+			margin:50px auto;
+			transition:transform 2s;}
+		.two:hover{
+				width: 400px;
+				height: 400px;
+				transform:rotate(9999deg);}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<em>效果开始于指定的 CSS 属性改变值时。CSS 属性改变的典型时间是鼠标指针位于元素上时</em>
+	</div>
+
+	<div class="one">
+		<em>使用所有过渡的,简写的 transition 属性</em>
+	</div>
+
+	<div class="two">
+		<em>如需向多个样式添加过渡效果，请添加多个属性，由逗号隔开</em><br/>
+		<em>向宽度、高度和转换添加过渡效果</em>
+	</div>
+</body>
+</html>
